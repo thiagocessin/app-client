@@ -7,11 +7,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSliderModule} from '@angular/material/slider';
 
 import { HttpClientModule } from '@angular/common/http';
-import { MaterialModule } from './material/material.module'
+import { MaterialModule } from './material/material.module';
+import { HttpRequestsComponent } from './components/http-requests/http-requests.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HttpRequestsComponent
   ],
   imports: [
     BrowserModule,
