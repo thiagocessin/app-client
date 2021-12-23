@@ -9,19 +9,23 @@ import {MatSliderModule} from '@angular/material/slider';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material/material.module';
 import { HttpRequestsComponent } from './components/http-requests/http-requests.component'
+import { DialogEditProductComponent } from './components/dialog-edit-product/dialog-edit-product.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HttpRequestsComponent
+    HttpRequestsComponent,
+    DialogEditProductComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatSliderModule,
     HttpClientModule,
-    MaterialModule
-  ],
+    MaterialModule,
+    FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

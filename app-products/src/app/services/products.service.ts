@@ -37,4 +37,8 @@ export class ProductsService {
 
     return this.http.post<Product>(`${this.url}/products`,p);
   }
+
+  deleteProduct(p:Product){
+    return this.http.delete(`${this.url}/products/${p._id}`);
+  }
 }

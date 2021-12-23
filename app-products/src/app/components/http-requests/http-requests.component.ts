@@ -18,6 +18,8 @@ export class HttpRequestsComponent implements OnInit {
   productsIds: Product[] = [];
   newlyProducts: Product[] = [];
 
+  productsToDelete: Product[] = [];
+
   constructor(private productService: ProductsService,
               private snackBar: MatSnackBar){
   }
@@ -150,7 +152,35 @@ export class HttpRequestsComponent implements OnInit {
         this.snackBar.open(err.error.msg,'',config);
     });
 
+  }
 
+
+  loadProductsToDelete(){
+    this.productService.getProdutos()
+    .subscribe((prods)=>{
+      this.productsToDelete = prods;
+    });
+  }
+
+  deleteProduct(p:Product){
+    this.productService.deleteProduct(p)
+      .subscribe((res)=>{
+        let i = this.productsToDelete.findIndex(prod=>p._id==prod._id);
+
+        if(i >=0)
+          this.productsToDelete.splice(i,1);
+
+      },
+      (err)=>{
+        let config = new MatSnackBarConfig();
+        config.duration = 2000;
+        config.panelClass = ['snack_err'];
+
+        if(err.status == 0)
+          this.snackBar.open('Could not connect to the server','',config);
+        else
+          this.snackBar.open(err.error.msg,'',config);
+      });
 
   }
 }
