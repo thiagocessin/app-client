@@ -10,13 +10,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material/material.module';
 import { HttpRequestsComponent } from './components/http-requests/http-requests.component'
 import { DialogEditProductComponent } from './components/dialog-edit-product/dialog-edit-product.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TemplateDrivenFormComponent } from './forms/template-driven-form/template-driven-form.component';
+import { FormsNativeValidationComponent } from './forms/forms-native-validation/forms-native-validation.component';
+import { FormValidationComponent } from './forms/form-validation/form-validation.component';
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HttpRequestsComponent,
-    DialogEditProductComponent
+    DialogEditProductComponent,
+    TemplateDrivenFormComponent,
+    FormsNativeValidationComponent,
+    FormValidationComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
@@ -24,9 +34,11 @@ import { FormsModule } from '@angular/forms';
     MatSliderModule,
     HttpClientModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
     ],
   providers: [],
+  entryComponents:[DialogEditProductComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

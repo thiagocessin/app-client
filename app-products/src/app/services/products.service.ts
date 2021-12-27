@@ -1,7 +1,7 @@
+import { Product } from './../model/product.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Product } from '../model/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -40,5 +40,9 @@ export class ProductsService {
 
   deleteProduct(p:Product){
     return this.http.delete(`${this.url}/products/${p._id}`);
+  }
+
+  editProduct(p: Product) : Observable<Product>{
+    return this.http.patch<Product>(`${this.url}/products/${p._id}`,p);
   }
 }
