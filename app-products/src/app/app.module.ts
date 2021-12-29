@@ -15,6 +15,10 @@ import { TemplateDrivenFormComponent } from './forms/template-driven-form/templa
 import { FormsNativeValidationComponent } from './forms/forms-native-validation/forms-native-validation.component';
 import { FormValidationComponent } from './forms/form-validation/form-validation.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { FormGroupComponent } from './forms/form-group/form-group.component';
+import { FormBuilderComponent } from './forms/form-builder/form-builder.component';
+import { FormArrayComponent } from './forms/form-array/form-array.component';
+import { ReactiveFormsValidatorComponent } from './forms/reactive-forms-validator/reactive-forms-validator.component';
 
 
 
@@ -26,7 +30,11 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
     TemplateDrivenFormComponent,
     FormsNativeValidationComponent,
     FormValidationComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    FormGroupComponent,
+    FormBuilderComponent,
+    FormArrayComponent,
+    ReactiveFormsValidatorComponent
   ],
   imports: [
     BrowserModule,
