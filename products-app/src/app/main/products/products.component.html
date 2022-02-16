@@ -1,0 +1,15 @@
+<h3>Products</h3>
+
+<div *ngIf="products$ | async; else noproduct">
+
+  <ul>
+    <li *ngFor="let p of (products$ | async)">{{p.name}} - {{p.price}} - {{p.department}}</li>
+  </ul>
+
+</div>
+
+<ng-template #noproduct>
+
+  <p>No products</p>
+</ng-template>
+
